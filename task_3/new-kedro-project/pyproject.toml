@@ -1,0 +1,44 @@
+[build-system]
+requires = [
+    "setuptools",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+requires-python = ">=3.10"
+name = "new_kedro_project"
+readme = "README.md"
+dynamic = [
+    "version",
+]
+dependencies = [
+    "ipython>=8.10",
+    "jupyterlab>=3.0",
+    "notebook",
+    "kedro~=1.4.0",
+]
+
+[project.scripts]
+new-kedro-project = "new_kedro_project.__main__:main"
+
+[project.entry-points."kedro.hooks"]
+
+[tool.setuptools.dynamic.version]
+attr = "new_kedro_project.__version__"
+
+[tool.setuptools.packages.find]
+where = [
+    "src",
+]
+namespaces = false
+
+[tool.kedro]
+package_name = "new_kedro_project"
+project_name = "New Kedro Project"
+kedro_init_version = "1.4.0"
+tools = "['Data Structure']"
+example_pipeline = "False"
+source_dir = "src"
+
+[tool.kedro_telemetry]
+project_id = "212ceaa9c6254a2bb63b81480c1abf22"

@@ -1,0 +1,3 @@
+mapping_quality_check:
+  type: kedro_datasets.text.TextDataset
+  filepath: data/08_reporting/quality_check.txt
